@@ -1,0 +1,7 @@
+[General]
+Name=Consistometer
+CommandLine=../consist/consistometer.exe
+Directory=../consist/
+StatusFilePath=./data/status_consistometer.ini
+StartTimeout=10
+StopTimeout=5
