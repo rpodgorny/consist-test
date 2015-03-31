@@ -3,7 +3,7 @@ echo this is compile.bat v0.3
 setlocal
 
 set name=consist
-set pkgrel=2
+set pkgrel=3
 
 rd /s /q pkg
 md pkg
