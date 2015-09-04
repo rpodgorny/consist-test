@@ -50,23 +50,23 @@ type
     { Public declarations }
   end;
 {................}
-  function MemShOpen(ApplicationName : PChar) : longint; stdcall; external 'memsh.dll';
-  function MemShClose : longint;  stdcall;external 'memsh.dll';
+  function MemShOpen(ApplicationName : PChar) : longint; stdcall; external 'libsh.dll';
+  function MemShClose : longint;  stdcall;external 'libsh.dll';
 
-  function MemShGetIdentVarName(VarName : PChar) : Longint; stdcall; external 'memsh.dll';
+  function MemShGetIdentVarName(VarName : PChar) : Longint; stdcall; external 'libsh.dll';
 
-  function MemShGetTypeVar(Ident : longint): Char;  stdcall; external 'memsh.dll';
-  function MemShGetSizeVar(Ident : longint): longint;  stdcall; external 'memsh.dll';
-  function MemShReadVar(Ident : longint; {var} Pdat : pointer) : longint; stdcall;external 'memsh.dll';
-  function MemShWriteVar(Ident : longint; {var} Pdat : pointer): longint; stdcall;  external 'memsh.dll';
+  function MemShGetTypeVar(Ident : longint): Char;  stdcall; external 'libsh.dll';
+  function MemShGetSizeVar(Ident : longint): longint;  stdcall; external 'libsh.dll';
+  function MemShReadVar(Ident : longint; {var} Pdat : pointer) : longint; stdcall;external 'libsh.dll';
+  function MemShWriteVar(Ident : longint; {var} Pdat : pointer): longint; stdcall;  external 'libsh.dll';
 
-  function MemShGetTypeVarName(VarName : PChar): Char;  stdcall; external 'memsh.dll';
-  function MemShGetSizeVarName(VarName : PChar): longint;  stdcall; external 'memsh.dll';
-  function MemShWriteVarName(VarName : PChar; {var} Pdat : pointer): longint; stdcall;  external 'memsh.dll';
-  function MemShReadVarName(VarName : PChar; {var} Pdat : pointer) : longint; stdcall;external 'memsh.dll';
+  function MemShGetTypeVarName(VarName : PChar): Char;  stdcall; external 'libsh.dll';
+  function MemShGetSizeVarName(VarName : PChar): longint;  stdcall; external 'libsh.dll';
+  function MemShWriteVarName(VarName : PChar; {var} Pdat : pointer): longint; stdcall;  external 'libsh.dll';
+  function MemShReadVarName(VarName : PChar; {var} Pdat : pointer) : longint; stdcall;external 'libsh.dll';
 
-  function MemShReadApplicationCount : longint; stdcall; external 'memsh.dll';
-  function MemShLengthPcharMax : longint; stdcall; external 'memsh.dll';
+  function MemShReadApplicationCount : longint; stdcall; external 'libsh.dll';
+  function MemShLengthPcharMax : longint; stdcall; external 'libsh.dll';
 {................}
 
 var
