@@ -16,7 +16,7 @@ md pkg\atx300\loader\data
 cp -av consist.loader pkg/atx300/loader/data/consist
 cp atxpkg_backup pkg/.atxpkg_backup
 
-hg parents --template "{latesttag}" >.version
+git describe --tags --abbrev=0 >.version
 set /p version=<.version
 rm .version
 set version=%version:~1%
