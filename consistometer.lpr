@@ -3,6 +3,10 @@ program consistometer;
 {$MODE Delphi}
 
 uses
+{$IFDEF UNIX}
+  cthreads,
+{$ENDIF}
+
   Forms, Interfaces,
   consistometer_u in 'consistometer_u.pas' {Form1};
 
