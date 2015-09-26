@@ -1,10 +1,12 @@
 unit consistometer_u;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, StdCtrls, FileCtrl, ComCtrls;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ExtCtrls, StdCtrls, FileCtrl, ComCtrls, FileUtil;
 
 type
   TForm1 = class(TForm)
@@ -75,7 +77,7 @@ var
 implementation
 uses
     IniFiles, Registry, Gauges;
-{$R *.DFM}
+{$R *.lfm}
 const
    NameMixer1On           = 'GI_Mixer1_on';
    NameConsistencyDisplay = 'G_Mixer1_Consistency_Display';
@@ -212,7 +214,7 @@ begin
        if count>=10
         then Break;
      until Result;
-     if FileExists(WorkName)
+     if FileExistsUTF8(WorkName) { *Converted from FileExists* }
       then
        begin
         AssignFile(F, WorkName);
@@ -509,7 +511,7 @@ begin
     if (Sk<5) and (Sk>0) and not start
       then
         begin                                 {zmena tridy konzistence}
-          windows.Beep(10,15);
+          ///windows.Beep(10,15);
           StartTime:=GetTickCount;
           start:=true;
           Zapis1:=true;
@@ -778,7 +780,7 @@ var
 begin
    Sk:=TTrackBar(Sender).Tag;
    SKonz[Sk]:=TTrackBar(Sender).max-1-TTrackBar(Sender).Position;
-   windows.Beep(10,15);
+   ///windows.Beep(10,15);
    start:=true;
    Timer1.Tag:=0;
    Image1.Canvas.Brush.Color:=clWhite; {vymazani}

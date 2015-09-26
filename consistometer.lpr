@@ -1,10 +1,12 @@
 program consistometer;
 
+{$MODE Delphi}
+
 uses
-  Forms,
+  Forms, Interfaces,
   consistometer_u in 'consistometer_u.pas' {Form1};
 
-{$R *.RES}
+{$R *.res}
 
 begin
   Application.Initialize;
